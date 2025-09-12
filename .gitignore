@@ -1,0 +1,36 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+Assets/AssetStoreTools*
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.sln.docstates
+
+# Node
+node_modules/
+npm-debug.log*
+.env
+
+# Web
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python (if using)
+__pycache__/
+*.pyc
