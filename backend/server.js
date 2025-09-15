@@ -12,20 +12,30 @@ app.use(bodyParser.json());
 app.get('/test', (req, res) => {
   res.json({ message: "Server is running!" });
 });
+const axios = require('axios');
+async function askGeminiAI(promptText) {
+  const apiKey = process.env.GEMINI_API_KEY;
+  const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey;
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  try {
+    const response = await axios.post(url, {
+      contents: [{ parts: [{ text: promptText }] }]
+    });
+    // This may need to be adjusted based on latest Gemini API response format:
+    return response.data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+  } catch (err) {
+    console.error("Gemini API error:", err?.response?.data || err.message);
+    return "Error contacting Gemini AI";
+  }
+}
+
+app.post('/ask-gemini', async (req, res) => {
+  const { prompt } = req.body;
+  if (!prompt) return res.status(400).json({ message: "Prompt is required" });
+
+  const aiResponse = await askGeminiAI(prompt);
+  res.json({ response: aiResponse });
 });
-
-// require('dotenv').config();
-// const mysql = require('mysql2/promise');
-
-// const db = mysql.createPool({
-//   host: process.env.DB_HOST,
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD,
-//   database: process.env.DB_NAME,
-// });
 
 // Register endpoint
 app.post('/register', async (req, res) => {
@@ -57,9 +67,20 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Get-question endpoint (dummy)
-app.get('/get-question', (req, res) => {
-  res.json({ question: "What is 2 + 2?", answer: "4" });
+// Get-question endpoint (generate question using Gemini AI)
+app.get('/get-question', async (req, res) => {
+  // You can customize the prompt for your needs:
+  const prompt = "Generate a multiple-choice math question for a beginner student. Format: {\"question\": \"...\", \"options\": [\"...\", \"...\", \"...\", \"...\"], \"answer\": \"...\"}";
+
+  const aiText = await askGeminiAI(prompt);
+
+  // Try to parse as JSON if Gemini follows the format, else return as text
+  try {
+    const questionObj = JSON.parse(aiText);
+    res.json(questionObj);
+  } catch {
+    res.json({ question: aiText });
+  }
 });
 
 // Submit-answer endpoint (store score)
@@ -109,4 +130,8 @@ const db = mysql.createPool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   port: process.env.DB_PORT
+});
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
