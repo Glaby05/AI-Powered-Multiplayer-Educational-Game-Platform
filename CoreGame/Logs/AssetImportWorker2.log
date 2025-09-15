@@ -361,3 +361,56 @@ Memory consumption went from 157.3 MB to 150.7 MB.
 Total: 24.091900 ms (FindLiveObjects: 2.245100 ms CreateObjectMapping: 1.789400 ms MarkObjects: 11.920800 ms  DeleteObjects: 8.133500 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+- Loaded All Assemblies, in  6.972 seconds
+Refreshing native plugins compatible for Editor in 9.54 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.276 seconds
+Domain Reload Profiling: 9259ms
+	BeginReloadAssembly (2912ms)
+		ExecutionOrderSort (4ms)
+		DisableScriptedObjects (204ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (24ms)
+		CreateAndSetChildDomain (1378ms)
+	RebuildCommonClasses (102ms)
+	RebuildNativeTypeToScriptingClass (35ms)
+	initialDomainReloadingComplete (128ms)
+	LoadAllAssembliesAndSetupDomain (3805ms)
+		LoadAssemblies (3145ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1077ms)
+			TypeCache.Refresh (67ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (882ms)
+			ResolveRequiredComponents (37ms)
+	FinalizeReload (2278ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1798ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (16ms)
+			BeforeProcessingInitializeOnLoad (453ms)
+			ProcessInitializeOnLoadAttributes (1133ms)
+			ProcessInitializeOnLoadMethodAttributes (161ms)
+			AfterProcessingInitializeOnLoad (26ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (58ms)
+Refreshing native plugins compatible for Editor in 13.53 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 36 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6794 unused Assets / (7.1 MB). Loaded Objects now: 7486.
+Memory consumption went from 159.4 MB to 152.3 MB.
+Total: 34.393900 ms (FindLiveObjects: 2.275700 ms CreateObjectMapping: 2.859500 ms MarkObjects: 20.820800 ms  DeleteObjects: 8.435300 ms)
+
+Prepare: number of updated asset objects reloaded= 0

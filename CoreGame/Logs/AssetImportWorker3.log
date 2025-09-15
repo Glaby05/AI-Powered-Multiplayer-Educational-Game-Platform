@@ -361,3 +361,64 @@ Received Import Request.
 Start importing Assets/Scenes/QuizManager.cs using Guid(244501cb61fdc3e4e8ab67bef1558af6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e04f05b29e947a50fea49a3f821be8ce') in 0.0952456 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+- Loaded All Assemblies, in  7.028 seconds
+Refreshing native plugins compatible for Editor in 8.05 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.311 seconds
+Domain Reload Profiling: 9382ms
+	BeginReloadAssembly (2905ms)
+		ExecutionOrderSort (1ms)
+		DisableScriptedObjects (186ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (19ms)
+		CreateAndSetChildDomain (1093ms)
+	RebuildCommonClasses (101ms)
+	RebuildNativeTypeToScriptingClass (40ms)
+	initialDomainReloadingComplete (134ms)
+	LoadAllAssembliesAndSetupDomain (3889ms)
+		LoadAssemblies (3074ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1171ms)
+			TypeCache.Refresh (127ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (962ms)
+			ResolveRequiredComponents (29ms)
+	FinalizeReload (2313ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1832ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (15ms)
+			BeforeProcessingInitializeOnLoad (449ms)
+			ProcessInitializeOnLoadAttributes (1129ms)
+			ProcessInitializeOnLoadMethodAttributes (202ms)
+			AfterProcessingInitializeOnLoad (31ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (46ms)
+Refreshing native plugins compatible for Editor in 13.25 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 36 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6794 unused Assets / (6.2 MB). Loaded Objects now: 7486.
+Memory consumption went from 150.8 MB to 144.6 MB.
+Total: 27.089200 ms (FindLiveObjects: 1.483200 ms CreateObjectMapping: 2.045100 ms MarkObjects: 15.810700 ms  DeleteObjects: 7.747400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 649.423684 seconds.
+  path: Assets/Scenes/QuizManager.cs
+  artifactKey: Guid(244501cb61fdc3e4e8ab67bef1558af6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/QuizManager.cs using Guid(244501cb61fdc3e4e8ab67bef1558af6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ae09d48072c2e6423aefac55f0dad764') in 0.0171954 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
