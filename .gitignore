@@ -34,3 +34,6 @@ Thumbs.db
 # Python (if using)
 __pycache__/
 *.pyc
+
+# env file
+.env
